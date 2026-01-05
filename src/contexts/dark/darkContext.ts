@@ -10,4 +10,4 @@ export const DarkContext = createContext<DarkContextType>({
 	toggleDark: () => {},
 });
 
-export default DarkContext;
+// Use named exports only for consistency across the codebase
