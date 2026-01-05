@@ -1,5 +1,5 @@
-import { HtmlElementMap, type HtmlInputElements } from '../../types';
-import { Text } from '../text/Text';
+import { HtmlElementMap, type HtmlInputElements } from 'types';
+import { Text } from 'components/atoms';
 
 interface InputProps {
 	label: string;

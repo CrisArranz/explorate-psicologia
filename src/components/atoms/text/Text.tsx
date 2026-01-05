@@ -1,5 +1,5 @@
 import React from 'react';
-import { HtmlElementMap, type HtmlTextElements } from '../../types';
+import { HtmlElementMap, type HtmlTextElements } from 'types';
 
 interface TextProps {
 	content: string;
