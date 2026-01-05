@@ -1,4 +1,4 @@
-import { HtmlElementMap, type HtmlContainerElements } from '../../types';
+import { HtmlElementMap, type HtmlContainerElements } from 'types';
 
 interface ContainerProps {
 	as?: HtmlContainerElements;

@@ -1,4 +1,4 @@
-import { HtmlElementMap, type HtmlListElements } from '../../types';
+import { HtmlElementMap, type HtmlListElements } from 'types';
 
 interface ItemProps {
 	content: string | React.ReactNode;

@@ -1,4 +1,4 @@
-import { HtmlElementMap, type HtmlLinkElements } from '../../types';
+import { HtmlElementMap, type HtmlLinkElements } from 'types';
 
 type Target = '_self' | '_blank' | '_parent' | '_top';
 

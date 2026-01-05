@@ -1,4 +1,4 @@
-import { HtmlElementMap, type HtmlImageElements } from '../../types';
+import { HtmlElementMap, type HtmlImageElements } from 'types';
 
 interface ImageProps {
 	src?: string;

@@ -1,6 +1,6 @@
-import { Image, Link } from '../../atoms';
-import { List } from '../../atoms/list';
-import { HtmlElementMap } from '../../types';
+import { Image, Link } from 'components/atoms';
+import { List } from 'components/atoms/list';
+import { HtmlElementMap } from 'types';
 
 export const Topbar = () => {
 	const Navbar = HtmlElementMap['NAV'];
