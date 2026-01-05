@@ -6,6 +6,7 @@
 			"components/*": ["src/components/*"],
 			"components": ["src/components"],
 			"contexts/*": ["src/contexts/*"],
+			"contexts": ["src/contexts"],
 			"ui/*": ["src/ui/*"],
 			"types/*": ["src/components/types/*"],
 			"types": ["src/components/types"],
