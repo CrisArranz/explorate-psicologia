@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { DarkContext } from './darkContext';
+import { DarkContext } from './context';
 
 export const DarkProvider: React.FC<{ children: React.ReactNode }> = ({
 	children,

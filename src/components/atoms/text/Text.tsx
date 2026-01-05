@@ -1,17 +1,23 @@
 import React from 'react';
-import { htmlElementMap, type HtmlTextElements } from '../../types';
+import { HtmlElementMap, type HtmlTextElements } from '../../types';
 
-interface Text {
+interface TextProps {
 	content: string;
 	className?: string;
 	as?: HtmlTextElements;
+	htmlFor?: string;
 }
 
-export const Text: React.FC<Text> = ({
+export const Text: React.FC<TextProps> = ({
 	content,
 	as = 'PARAGRAPH',
 	className = '',
+	htmlFor,
 }) => {
-	const Tag = htmlElementMap[as];
-	return <Tag className={className}>{content}</Tag>;
+	const Tag = HtmlElementMap[as];
+	return (
+		<Tag {...(className && { className })} {...(htmlFor && { for: htmlFor })}>
+			{content}
+		</Tag>
+	);
 };

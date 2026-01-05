@@ -1,4 +1,4 @@
-export const htmlElementMap = {
+export const HtmlElementMap = {
 	A: 'a',
 	ABBR: 'abbr',
 	ADDRESS: 'address',
@@ -113,7 +113,7 @@ export const htmlElementMap = {
 	WBR: 'wbr',
 } as const;
 
-export type HtmlElements = keyof typeof htmlElementMap;
+export type HtmlElements = keyof typeof HtmlElementMap;
 export type HtmlTextElements = Extract<
 	HtmlElements,
 	| 'PARAGRAPH'
@@ -127,4 +127,22 @@ export type HtmlTextElements = Extract<
 	| 'U'
 	| 'I'
 	| 'B'
+	| 'H_1'
+	| 'H_2'
+	| 'H_3'
+	| 'H_4'
+	| 'H_5'
+	| 'H_6'
+	| 'LABEL'
 >;
+export type HtmlImageElements = Extract<HtmlElements, 'IMG' | 'PICTURE'>;
+export type HtmlLinkElements = Extract<HtmlElements, 'A'>;
+export type HtmlInputElements = Extract<
+	HtmlElements,
+	'INPUT' | 'TEXTAREA' | 'SELECT'
+>;
+export type HtmlContainerElements = Extract<
+	HtmlElements,
+	'DIV' | 'SECTION' | 'ARTICLE' | 'ASIDE' | 'MAIN' | 'HEADER' | 'FOOTER' | 'NAV'
+>;
+export type HtmlListElements = Extract<HtmlElements, 'UL' | 'OL' | 'LI'>;
