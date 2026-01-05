@@ -1,11 +1,5 @@
-import { Text } from "./components/atoms/text/Text"
+import { Router } from './ui/router/router';
 
-function App() {
-  return (
-    <>
-      <Text content="Hola!" className="text-3xl"/>  
-    </>
-  )
-}
-
-export default App;
+export const App = () => {
+	return <Router />;
+};
