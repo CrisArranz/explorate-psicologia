@@ -1,4 +1,4 @@
-import { Input } from '../../../components/atoms';
+import { Input } from 'components/atoms';
 
 export const Login = () => {
 	return (
