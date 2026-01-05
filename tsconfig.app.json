@@ -8,6 +8,7 @@
 			"contexts/*": ["src/contexts/*"],
 			"ui/*": ["src/ui/*"],
 			"types/*": ["src/components/types/*"],
+			"types": ["src/components/types"],
 			"pages/*": ["src/ui/pages/*"]
 		},
 		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
