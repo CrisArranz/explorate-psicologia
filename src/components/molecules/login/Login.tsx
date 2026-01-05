@@ -15,7 +15,7 @@ import { Button, Input } from 'components/atoms';
  */
 export const Login = () => {
 	return (
-		<form className="flex flex-col gap-4" method="POST">
+		<form className="flex flex-col content-center gap-4 w-96" method="POST">
 			<Input label="Username" input="username" type="text" />
 			<Input label="Password" input="password" type="password" />
 			<Button label="Login" />

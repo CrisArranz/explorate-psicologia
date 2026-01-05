@@ -12,11 +12,13 @@ type ButtonType = 'button' | 'submit' | 'reset';
  * @property {string} label - Texto que se muestra en el botón.
  * @property {ButtonType} [type='submit'] - Tipo de botón (button, submit, reset).
  * @property {string} [className] - Clases CSS adicionales para personalizar el botón.
+ * @property {boolean} [hoverAnimation=true] - Indica si se aplica animación de hover al botón.
  */
 interface ButtonProps {
 	label: string;
 	type?: ButtonType;
 	className?: string;
+	hoverAnimation?: boolean;
 }
 
 /**
@@ -45,11 +47,27 @@ export const Button = ({
 	type = 'submit',
 	label = 'Default Button',
 	className,
+	hoverAnimation = true,
 }: ButtonProps) => {
 	const Button = HtmlElementMap['BUTTON'];
+
+	if (!hoverAnimation) {
+		return (
+			<Button type={type} {...(className && { className })}>
+				<span>{label}</span>
+			</Button>
+		);
+	}
+
 	return (
-		<Button type={type} {...(className && { className })}>
-			{label}
+		<Button
+			type={type}
+			className="relative px-6 py-3 font-semibold border border-blue-600 overflow-hidden group rounded-full cursor-pointer"
+		>
+			<span className="absolute inset-0 bg-blue-600 -translate-x-full group-hover:translate-x-0 rounded-full transition-transform duration-400"></span>
+			<span className="relative z-10 text-blue-600 group-hover:text-white transition-colors duration-400">
+				{label}
+			</span>
 		</Button>
 	);
 };

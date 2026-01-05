@@ -39,7 +39,7 @@ interface InputProps {
 export const Input = ({ label, as = 'INPUT', input, type }: InputProps) => {
 	const InputElement = HtmlElementMap[as];
 	return (
-		<div className="relative *:focus:outline-none">
+		<div className="relative">
 			<InputElement
 				value=""
 				id={input}
@@ -47,7 +47,7 @@ export const Input = ({ label, as = 'INPUT', input, type }: InputProps) => {
 				type={type}
 				required
 				autoComplete="off"
-				className="peer block w-72 h-10 bg-transparent border border-gray-300 outline-none transition-all duration-300 ease px-[15px] focus:border-blue-500"
+				className="peer block w-full h-10 bg-transparent border border-gray-400 outline-none transition-all duration-300 ease px-[15px] focus:border-blue-500"
 			/>
 			<Text
 				htmlFor={input}
