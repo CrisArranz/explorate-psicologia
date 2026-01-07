@@ -4,16 +4,16 @@ import { HtmlElementMap, type HtmlTextElements } from 'types';
 /**
  * Props para el componente Text.
  * @interface TextProps
- * @property {string} content - Contenido de texto a renderizar.
  * @property {string} [className] - Clases CSS adicionales para personalizar el texto.
  * @property {HtmlTextElements} [as='PARAGRAPH'] - Elemento HTML a renderizar (p, span, label, etc.).
  * @property {string} [htmlFor] - Atributo 'for' para elementos label.
+ * @property {React.ReactNode} [children] - Contenido hijo alternativo (si se prefiere sobre content).
  */
 interface TextProps {
-	content: string;
 	className?: string;
 	as?: HtmlTextElements;
 	htmlFor?: string;
+	children?: React.ReactNode;
 }
 
 /**
@@ -36,15 +36,15 @@ interface TextProps {
  * <Text as="LABEL" htmlFor="input-id" content="Email" />
  */
 export const Text: React.FC<TextProps> = ({
-	content,
 	as = 'PARAGRAPH',
 	className = '',
 	htmlFor,
+	children,
 }) => {
 	const Tag = HtmlElementMap[as];
 	return (
 		<Tag {...(className && { className })} {...(htmlFor && { for: htmlFor })}>
-			{content}
+			{children}
 		</Tag>
 	);
 };

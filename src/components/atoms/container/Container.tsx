@@ -4,9 +4,14 @@ import { HtmlElementMap, type HtmlContainerElements } from 'types';
  * Props para el componente Container.
  * @interface ContainerProps
  * @property {HtmlContainerElements} [as='DIV'] - Elemento HTML a renderizar (div, section, article, etc.).
+ * @property {string} [className] - Clases TailwindCSS adicionales para el contenedor.
+ * @property {React.ReactNode} [children] - Contenido hijo a renderizar dentro del contenedor.
  */
 interface ContainerProps {
 	as?: HtmlContainerElements;
+	className?: string;
+	children?: React.ReactNode;
+	style?: React.CSSProperties;
 }
 
 /**
@@ -28,7 +33,16 @@ interface ContainerProps {
  * @example
  * <Container as="ARTICLE" />
  */
-export const Container = ({ as = 'DIV' }: ContainerProps) => {
+export const Container = ({
+	as = 'DIV',
+	className = '',
+	children,
+	style,
+}: ContainerProps) => {
 	const Tag = HtmlElementMap[as];
-	return <Tag>Container Component</Tag>;
+	return (
+		<Tag className={className} style={style}>
+			{children}
+		</Tag>
+	);
 };

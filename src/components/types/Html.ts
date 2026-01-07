@@ -143,6 +143,14 @@ export type HtmlInputElements = Extract<
 >;
 export type HtmlContainerElements = Extract<
 	HtmlElements,
-	'DIV' | 'SECTION' | 'ARTICLE' | 'ASIDE' | 'MAIN' | 'HEADER' | 'FOOTER' | 'NAV'
+	| 'DIV'
+	| 'SECTION'
+	| 'ARTICLE'
+	| 'ASIDE'
+	| 'MAIN'
+	| 'HEADER'
+	| 'FOOTER'
+	| 'NAV'
+	| 'SPAN'
 >;
 export type HtmlListElements = Extract<HtmlElements, 'UL' | 'OL' | 'LI'>;

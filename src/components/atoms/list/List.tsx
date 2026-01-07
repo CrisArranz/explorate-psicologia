@@ -27,7 +27,7 @@ interface ListProps {
 	as?: Extract<HtmlListElements, 'UL' | 'OL'>;
 	items: ItemProps[];
 	className?: string;
-	key: string;
+	$key: string;
 }
 
 /**
@@ -54,13 +54,13 @@ interface ListProps {
  *   { content: "Paso 3" }
  * ]} />
  */
-export const List = ({ as = 'UL', items, className = '', key }: ListProps) => {
+export const List = ({ as = 'UL', items, className = '', $key }: ListProps) => {
 	const List = HtmlElementMap[as];
 	return (
-		<List className={className}>
+		<List className={className} key={$key}>
 			{items.map(({ as = 'LI', ...item }, index) => {
 				const Item = HtmlElementMap[as];
-				return <Item key={`${key}-${index}`}>{item.content}</Item>;
+				return <Item key={`${$key}-${index}`}>{item.content}</Item>;
 			})}
 		</List>
 	);
