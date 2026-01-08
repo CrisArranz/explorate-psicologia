@@ -1,0 +1,1 @@
+Explorate Psicologia API

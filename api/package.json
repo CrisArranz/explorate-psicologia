@@ -1,0 +1,50 @@
+{
+  "name": "explorate-psicologia-api",
+  "version": "0.0.0",
+  "description": "Esta es una api para gestionar salas dentro de un espacio de trabajo",
+  "keywords": [
+    "explorate-psicologia",
+    "explorate"
+  ],
+  "homepage": "https://github.com/CrisArranz/explorate-psicologia#readme",
+  "bugs": {
+    "url": "https://github.com/CrisArranz/explorate-psicologia/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CrisArranz/explorate-psicologia.git"
+  },
+  "license": "ISC",
+  "author": "CrisArranz",
+  "type": "commonjs",
+  "main": "app.ts",
+  "scripts": {
+    "main": "dist/app.js",
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "nodemon src/server.ts",
+    "lint": "eslint 'src/**/*.ts'"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "connect-mongo": "^6.0.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-session": "^1.18.2",
+    "http-errors": "^2.0.1",
+    "mongoose": "^9.1.2",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.18.2",
+    "@types/morgan": "^1.9.10",
+    "@types/node": "^25.0.3",
+    "eslint": "^9.39.2",
+    "jest": "^30.2.0",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.7.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
