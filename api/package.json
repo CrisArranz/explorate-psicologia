@@ -23,7 +23,8 @@
     "build": "tsc",
     "start": "node dist/app.js",
     "dev": "nodemon src/server.ts",
-    "lint": "eslint 'src/**/*.ts'"
+    "lint": "eslint 'src/**/*.ts'",
+    "seed": "ts-node src/.seeds/seed.ts"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
