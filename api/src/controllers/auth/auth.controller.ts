@@ -27,6 +27,17 @@ const login = async (req: Request, res: Response, next: NextFunction) => {
   res.status(200).json({ message: 'Login successful' });
 }
 
+const logout = async (req: Request, res: Response, next: NextFunction) => {
+  req.session!.destroy((err) => {
+    if (err) {
+      return next(createHttpError(500, { message: 'Failed to logout' }));
+    }
+    res.clearCookie('connect.sid');
+    res.status(200).json({ message: 'Logout successful' });
+  });
+}
+
 export {
-  login
+  login,
+  logout
 }
