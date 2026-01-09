@@ -10,7 +10,11 @@ interface Employee {
 	isAdmin: boolean;
 }
 
-const employeeSchema = new Schema<Employee>(
+interface EmployeeMethods {
+	comparePassword(candidatePassword: string): Promise<boolean>;
+}
+
+const employeeSchema = new Schema<Employee, mongoose.Model<Employee, {}, EmployeeMethods>, EmployeeMethods>(
 	{
 		email: {
 			type: String,
@@ -88,5 +92,10 @@ employeeSchema.pre('findOneAndUpdate', async function () {
 	update.password = await bcrypt.hash(update.password, salt);
 });
 
-export const EmployeeModel = mongoose.model<Employee>('Employee', employeeSchema);
+employeeSchema.methods.comparePassword = async function (this: HydratedDocument<Employee>, candidatePassword: string): Promise<boolean> {
+	const isMatch = await bcrypt.compare(candidatePassword, this.password);
+	return isMatch;
+}
+
+export const EmployeeModel = mongoose.model<Employee, mongoose.Model<Employee, {}, EmployeeMethods>>('Employee', employeeSchema);
 
